@@ -2,29 +2,16 @@ import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/NavBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ItemListContainer from './components/ItemListContainer';
+import "./components/ItemListContainer.css";
+
 
 
 function App() {
   return (
     <>
       <NavBar />
-      <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Coderhouse
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-      </div>
-    
+      <ItemListContainer greeting={'Compra tus productos aqui!!!'}/>  
     </>
 
 
