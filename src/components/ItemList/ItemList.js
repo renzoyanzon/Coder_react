@@ -1,6 +1,16 @@
-function ItemList() {
+import Item from "./Item";
+import "./ItemList.css";
+
+
+function ItemList({products}) {
     return ( 
-        <h1> ItemList</h1>
+    <div className="itemList">
+        {products.map((el)=>(
+        <Item key={el.id} prod = {el}/>
+       ))} 
+
+    </div>
+      
      );
 }
 

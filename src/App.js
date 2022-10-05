@@ -14,11 +14,11 @@ function App() {
     <BrowserRouter>
       <NavBar />
       <Routes>
-          <Route path='/' element={<ItemListContainer greeting={'Navegando juntos!'}/>  } />
-          <Route path='/category/:categoryName' element={<ItemListContainer greeting={'Navegando juntos!'}/>} />
-          <Route path='/item/:id' element={ <ItemDetailContainer/>} />
-          <Route path='/cart' element={ <Cart/>} />
-          <Route path='/checkout' element={ <Checkout/>} />
+        <Route path='/' element={ <ItemListContainer greeting={'Navegando juntos'}/>} />
+        <Route path='/category/:categoryName' element={ <ItemListContainer greeting={'Navegando juntos'}/>} /> 
+        <Route path='/item/:id' element={ <ItemDetailContainer/>} />
+        <Route path='/cart' element={ <Cart/>} />
+        <Route path='/checkout' element={<Checkout/>} />
           
       </Routes>
       
