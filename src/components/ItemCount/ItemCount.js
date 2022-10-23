@@ -4,6 +4,7 @@ import './ItemCount.css'
 function ItemCount({stock,initial,onAdd}) {
     
     const [count, setCount]=useState(initial);
+    
 
     //definimos una funcion que disminuya el valor de count
     const decrementar =()=>{

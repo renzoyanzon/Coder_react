@@ -23,7 +23,6 @@ const ItemListContainer = ({greeting}) => {
       }
     },[categoryName]);
 
-    console.log(productos)
 
     return ( 
       <Container>

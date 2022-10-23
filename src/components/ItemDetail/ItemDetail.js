@@ -1,20 +1,23 @@
-import { useState } from "react";
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 import ItemCount from "../ItemCount/ItemCount";
 import Item from "./Item";
 
 function ItemDetail({product}) {
-
-    const [quantity,setQuantity]=useState(0);
+    const {addProduct}= useContext(CartContext);
+    //const [quantity,setQuantity]=useState(0);
     
     const onAdd = (count)=>{
-        setQuantity(count);
+        addProduct(product,count);
+        
+        
     }
     
     return ( 
     
     <div>
         <Item prod = {product}/>
-        <ItemCount initial={1} stock= {5} onAdd={onAdd}/>
+        <ItemCount initial={1} stock= {10} onAdd={onAdd}/>
     </div>
    
      );
