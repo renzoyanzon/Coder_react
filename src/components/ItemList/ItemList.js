@@ -1,4 +1,4 @@
-import Item from "./Item";
+import Items from "./Items";
 import "./ItemList.css";
 
 
@@ -6,7 +6,7 @@ function ItemList({products}) {
     return ( 
     <div className="itemList">
         {products.map((el)=>(
-        <Item key={el.id} prod = {el}/>
+        <Items key={el.id} prod = {el}/>
        ))} 
 
     </div>
