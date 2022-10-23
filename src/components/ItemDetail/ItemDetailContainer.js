@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 import { useParams } from 'react-router-dom';
 import { getProduct } from '../../utils/products';
 import ItemDetail from './ItemDetail';
-
+import './Item.css';
 
 function ItemDetailContainer () {
     const[producto,setProducto]= useState()
@@ -18,7 +18,7 @@ function ItemDetailContainer () {
     
     
     return ( 
-        <Container>
+        <Container className="itemDetailContainer">
             <h3> Detalle del producto</h3>
             {producto &&  <ItemDetail product={producto}/>}
            

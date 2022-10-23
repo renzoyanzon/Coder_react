@@ -2,25 +2,23 @@ import { useContext } from 'react';
 import Container from 'react-bootstrap/Container';
 import { CartContext } from '../../context/CartContext';
 
-function Cart () {
+function Cart ({item}) {
     
-    const {productCartList,deleteProduct,deleteAllProducts}= useContext(CartContext)
-    
-    return ( 
-    <Container> 
-        <h1> Carrito de compras</h1>
-        {
-            productCartList.map((el)=>(
-                <>
-                    <li key={el.id}>{el.name}</li>
-                    <button  onClick={()=>deleteProduct(el.id)} > Eliminar </button>
-                </>
-                
-            ))
+    const {deleteProduct} = useContext(CartContext);
 
-        }
-        <button onClick={deleteAllProducts}> Limpiar </button>
-    </Container>
+    return ( 
+
+        <Container> 
+                <p>{`Producto: ${item.name}`}</p>
+                <hr/>
+                <span > {`Precio unitario: USD ${item.price}`} </span>
+                <hr/>
+                <p> {`Cantidad: ${item.quantity}`}</p>
+                <hr/>
+                <p> {`Total:  USD ${item.totalPrice}`}</p>
+                <hr/>
+                <button  onClick={()=>deleteProduct(item.id)} > Eliminar </button>
+        </Container>
      );
 }
 
