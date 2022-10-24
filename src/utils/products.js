@@ -1,3 +1,5 @@
+import { collection, doc, getDoc, getDocs, getFirestore, query, where } from "firebase/firestore";
+
 const productos= [
     {id:1,category: "Windsurf",name:"Tabla",marca:"Techno",price: 200,picturerurl:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEvrgX55cQMh2IhrNKUMPpkt-9T9sw1vRYEQ&usqp=CAU",stock:5},
     {id:2,category: "Windsurf",name:"Vela",marca:"Severne Synergy",price: 200,picturerurl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVDLKcNUiO29dcOHy8Q16eLNWFFSTKw1Wxhw&usqp=CAU",stock:2},
@@ -10,33 +12,56 @@ const productos= [
 
 
 export const getAllProducts = ()=>{
-    const promise= new Promise ((resolve)=>{
-        setTimeout(()=>{
-            return resolve (productos);
-        },2000)
-    })
+    //obtenemos la base de datos
+    const database = getFirestore();
+    //obtenems la referencia a la colección "items"
+    const collectionReference = collection(database,'items');
+    //obtenemos los datos a partir de la referencia creada
+    return getDocs(collectionReference)
+        .then(snapshot=>{
+            const list = snapshot
+            .docs
+            .map((doc)=>({
+              id: doc.id,
+              ...doc.data()
+            }));
+        return list
+        })
+        .catch(error=>console.warn(error))
 
-    return promise
-}
+};
 
 export const getProduct =(id)=>{
-    const promise = new Promise ((resolve)=>{
-        const result = productos.find((el)=> el.id === parseInt(id))
-        setTimeout(()=>{
-            return resolve(result);
-        },2000)
-    })
-
-    return promise
-}
+    //obtenemos la base de datos
+    const database = getFirestore();
+    //obtenemos referencia al documento
+    const itemReference = doc(database,'items',id);
+    //obtenemos el documento a partir de la referencia
+    return getDoc(itemReference)
+        .then((snapshot)=>{
+            if(snapshot.exists()){
+                const item = {
+                  id: snapshot.id,
+                  ...snapshot.data()
+                };
+                return item
+              }
+        })
+};
 
 export const getProductsByCategory = (categoryName)=>{
-    const promise= new Promise ((resolve)=>{
-        const results = productos.filter((el)=> el.category=== categoryName);
-        setTimeout(()=>{
-            return resolve (results);
-        },2000)
-    })
-
-    return promise
+    const database = getFirestore();
+    const collectionReference = collection(database,'items');
+    const collectionQuery = query(collectionReference,where('category','==',categoryName));
+    return getDocs(collectionQuery)
+        .then(snapshot=>{
+            const list = snapshot
+            .docs
+            .map((doc)=>({
+              id: doc.id,
+              ...doc.data()
+            }));
+        return list
+        })
+        .catch(error=>console.warn(error))
 }
