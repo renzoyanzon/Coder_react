@@ -2,7 +2,7 @@ import Items from "./Items";
 import "./ItemList.css";
 
 
-function ItemList({products}) {
+function ItemList({products = {}}) {
     return ( 
     <div className="itemList">
         {products.map((el)=>(
