@@ -1,0 +1,21 @@
+.titleCart{
+    color: rgba(0, 97, 0, 0.884);
+    font-size: 25px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    
+}
+
+.cartEmpty{
+    text-align: center;
+    margin: 5%;
+    color: rgba(0, 97, 0, 0.884);
+    font-size: 25px;
+    
+}
+
+.cartButton{
+    margin: 5%;
+ 
+
+}

@@ -9,8 +9,10 @@ function Item({prod}) {
                 <Card.Body>
                     <Card.Title>{prod.name}</Card.Title>
                     <Card.Text>
-                    Some quick example text to build on the card title and make up the
-                    bulk of the card's content.
+                    {`Stock: ${prod.stock}`}
+                    </Card.Text>
+                    <Card.Text>
+                    {prod.description}
                     </Card.Text>
                 </Card.Body>
             </Card>

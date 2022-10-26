@@ -1,3 +1,14 @@
 .card-img-top {
     height: 300px;
 }
+
+.itemsButton{
+    background-color: #23c483;
+    color: aliceblue;
+    margin: 1%;
+    padding: 0.5%;
+    border: 2px solid black;
+    border-radius: 20px 100px;
+    width: 80%;
+
+}

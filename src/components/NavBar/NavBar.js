@@ -1,11 +1,12 @@
 import{Container,Navbar,Nav} from "react-bootstrap";
-import CartWidget from "./CartWidget/CartWidget";
-import './CartWidget/CartWidget.css';
+import CartWidget from "../CartWidget/CartWidget";
+import '../CartWidget/CartWidget.css';
 import {Link} from "react-router-dom";
+import "./NavBar.css";
 
 const NavBar = ()=>{
     return(
-        <Navbar bg="dark" variant="dark">
+        <Navbar className="navbar" bg="dark" variant="dark">
             <Container>
             <Navbar.Brand as={Link} to='./'>
                Hijos del viento  

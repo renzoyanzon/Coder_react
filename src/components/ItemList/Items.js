@@ -11,14 +11,14 @@ function Item ({prod}) {
             <Card.Body>
                 <Card.Title>{prod.name}</Card.Title>
                 <Card.Text>
-                    $ {prod.price}
+                    USD {prod.price}
                 </Card.Text>
                 <Card.Text>
                     {prod.marca}
                 </Card.Text>
                 <Link to={`/item/${prod.id}`}>
-                    <Button variant="primary">
-                    Mas info
+                    <Button className='itemsButton' variant="primary">
+                    Detalle
                     </Button>
                 </Link>
     

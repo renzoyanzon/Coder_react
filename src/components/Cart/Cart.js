@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import Container from 'react-bootstrap/Container';
 import { CartContext } from '../../context/CartContext';
+import "./Cart.css"
 
 function Cart ({item}) {
     
@@ -8,8 +9,8 @@ function Cart ({item}) {
 
     return ( 
 
-        <Container> 
-                <p>{`Producto: ${item.name}`}</p>
+        <Container > 
+                <p className='titleCart'>{`Producto: ${item.name}`}</p>
                 <hr/>
                 <span > {`Precio unitario: USD ${item.price}`} </span>
                 <hr/>

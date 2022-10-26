@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Cart from './Cart';
 import { createOrder } from "../../utils/orders";
 import OrderModal from "../OrderModal/OrderModal";
+import "./Cart.css";
 
 const buyerMock = {
     name: 'renzo',
@@ -48,19 +49,19 @@ function CartContainer() {
                             
                         }
                         <hr/>
-                        <h5> {`Total compra: USD ${sumAllPrice()}`}</h5>
+                        <h5 className='titleCart'> {`Total compra: USD ${sumAllPrice()}`}</h5>
                         <hr/>
                         <button onClick={handleShow}> Finalizar compra </button>
                         <hr/>
                         <button onClick={deleteAllProducts}> Limpiar </button>
                     </>
                     :
-                    <>
+                    <div className="cartEmpty">
                         <h4> No existen productos seleccionados</h4>
                         <Link to='/'>
-                            <button> Ver todos los productos</button> 
+                            <button className="cartButton"> Ver todos los productos</button> 
                         </Link>
-                    </>   
+                    </div>   
                 }
 
                 <OrderModal 

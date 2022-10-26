@@ -18,7 +18,7 @@ function ItemDetail({product}) {
     
         <div className="itemDetail">
             <Item prod = {product}/>
-            <ItemCount initial={1} stock={10} onAdd={onAdd}/>
+            <ItemCount initial={1} stock={product.stock} onAdd={onAdd}/>
             {
                 quantity>0 &&
                 <Link to='/cart'>

@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import  './OrderModal.css';
 
 function OrderModal ({showModal,onClose,onBuy,orderId}) {
+    
+    
     return ( 
         <Modal show={showModal} onHide={onClose}>
             <Modal.Header closeButton>
@@ -36,7 +38,7 @@ function OrderModal ({showModal,onClose,onBuy,orderId}) {
                 { orderId && (
                 <div className="orderIdAlert"> 
                     <Alert key='success' variant='success'>
-                        {orderId}
+                        {`Id compra:  ${orderId}`}
                     </Alert>
                     <Link to='/'>
                         <Button variant="primary">

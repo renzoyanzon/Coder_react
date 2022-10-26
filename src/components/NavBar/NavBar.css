@@ -1,0 +1,18 @@
+.container a{
+    color: #23c483;
+    font-size: 20px;  
+}
+
+.navbar{
+    padding: 2%;
+}
+
+.me-auto{
+    padding-left: 15%;
+}
+
+
+.me-auto a{
+    margin-left: 5%;
+    margin-right: 5%;
+}
