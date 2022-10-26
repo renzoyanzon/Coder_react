@@ -11,7 +11,7 @@ import { CartProvider } from './context/CartContext';
 function App() {
 
   return (
-    <CartProvider>
+    <CartProvider basename='/Coder_react'>
       <BrowserRouter>
         <NavBar />
         <Routes>
