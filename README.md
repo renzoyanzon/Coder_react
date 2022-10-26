@@ -12,7 +12,8 @@ Este proyecto fue creado con:
 
 ## Demo
 
-![](https://firebasestorage.googleapis.com/v0/b/coderhouse-hdv.appspot.com/o/Recording%202022-10-26%20at%2017.13.32.gif?alt=media&token=f35af413-5b32-448f-b8c9-4e16010f4ae6)
+![Recording 2022-10-26 at 17 13 32](https://user-images.githubusercontent.com/105252286/198141162-70685cba-2630-49b2-af03-f7be9bba162d.gif)
+
 
 ## Libraries used:
 - React-Boostrap v2.5.0
